@@ -1,5 +1,6 @@
+from cgitb import text
 from pyrogram import Client, filters
-from pyrogram.types import Message
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 farshad=Client(
     "pyrogram bot",
@@ -10,7 +11,22 @@ farshad=Client(
 
 @farshad.on_message(filters.command("start"))
 async def start_message(bot, message):
-    await message.reply_text("hi hello")
+    await message.reply_text(
+        text="Enter your text",
+        reply_markup=InlineKeyboardMarkup( [[
+            InlineKeyboardButton("OWNER", url="t.me/farshadck")
+            ]]
+            )
+        )
+
+
+
+
+
+
+
+
+
 
 @farshad.on_message(filters.command("help"))
 async def help_message(bot: farshad, message: Message):
