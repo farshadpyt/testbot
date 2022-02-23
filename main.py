@@ -19,7 +19,7 @@ ALL_PIC = [
 
 @farshad.on_message(filters.command("leave") & filters.group)
 async def leave(bot, message):
-    bot.send_message (message.chat id, "Bye I am Leaving This Chat.")
+    bot.send_message(message.chat id, "Bye I am Leaving This Chat.")
     bot.leave_chat(message.chat.id)
     
 
