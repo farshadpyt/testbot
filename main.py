@@ -8,7 +8,7 @@ farshad=Client(
     api_hash="b0849a17c7dd35b96938591e3ea1caca"
 )
 
-@farshad.on_message(filter.command("start"))
+@farshad.on_message(filters.command("start"))
 async def start_message(bot, message):
     await message.reply_text("hi hello")
 
