@@ -11,8 +11,9 @@ farshad=Client(
 
 @farshad.on_message(filters.command("start"))
 async def start_message(bot, message):
-    await message.reply_text(
-        text="hello welcome",
+    await message.reply_photo(
+        photo="https://telegra.ph/file/e65116508df148b96111a.jpg",
+        caption="hello welcome",
         reply_markup=InlineKeyboardMarkup( [[
             InlineKeyboardButton("OWNER", url="t.me/farshadck"),
             InlineKeyboardButton("ABOUT", url="t.me/farshadck")
