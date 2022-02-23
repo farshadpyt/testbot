@@ -1,0 +1,6 @@
+pyrogram
+tgcrypto
+teligraph
+motor
+aiofiles
+dnspython
