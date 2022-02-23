@@ -12,10 +12,12 @@ farshad=Client(
 @farshad.on_message(filters.command("start"))
 async def start_message(bot, message):
     await message.reply_text(
-        text="Enter your text",
+        text="hello welcome",
         reply_markup=InlineKeyboardMarkup( [[
             InlineKeyboardButton("OWNER", url="t.me/farshadck"),
             InlineKeyboardButton("ABOUT", url="t.me/farshadck")
+            ],[
+            InlineKeyboardButton("OWNER", url="t.me/farshadck")          
             ]]
             )
         )
