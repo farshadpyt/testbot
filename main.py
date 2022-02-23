@@ -17,13 +17,6 @@ ALL_PIC = [
  "https://telegra.ph/file/647fee61578929d0089cf.jpg"
 ]
 
-@farshad.on_message(filters.command("leave") & filters.group)
-async def leave(bot, message):
-    bot.send_message(message.chat id, "Bye I am Leaving This Chat."),
-    bot.leave_chat(message.chat.id)
-    
-
-
 
 @farshad.on_message(filters.command("start"))
 async def start_message(bot, message):
