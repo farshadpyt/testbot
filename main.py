@@ -16,7 +16,7 @@ ALL_PIC = [
  "https://telegra.ph/file/1d4735f3285e7a2cc5b37.jpg",
  "https://telegra.ph/file/647fee61578929d0089cf.jpg"
 ]
-@farshad.on_message(filters.command('leave') & filters.group)
+@farshad.on_message(filters.command("leave") & filters.group)
 def leave(bot, message):
     bot.send_message (message.chat id, "Bye I am Leaving This Chat.")
     bot.leave_chat(message.chat.id)
