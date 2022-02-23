@@ -10,9 +10,6 @@ farshad=Client(
     api_hash="b0849a17c7dd35b96938591e3ea1caca"
 )
 
-GROUP = "testfarshadbot"
-WELCOME_MESSAGE = "enter your welcome message"
-
 ALL_PIC = [
  "https://telegra.ph/file/e65116508df148b96111a.jpg",
  "https://telegra.ph/file/1d4735f3285e7a2cc5b37.jpg",
@@ -35,14 +32,6 @@ async def start_message(bot, message):
         )
 
 
-
-
-
-
-
-@farshad.on_message(filters.chat(GROUP) & filters.new_chat_members)
-def welcome bot(client, message):
-    message.reply_text(WELCOME_MESSAGE)
 
 
 
