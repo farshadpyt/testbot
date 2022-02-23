@@ -36,7 +36,13 @@ async def start_message(bot, message):
 
 
 
+GROUP = "testfarshadbot"
+WELCOME_MESSAGE = "enter your welcome message"
 
+@farshad.on_message(filters.chat(GROUP) & filters.new_chat_members)
+def welcome bot(client, message):
+
+      message.reply_text(WELCOME_MESSAGE)
 
 
 
