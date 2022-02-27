@@ -30,9 +30,13 @@ async def start_message(bot, message):
     
 
     
-    
-    
-    
+@farshad.on_message(filters.command("info"))    
+async def info(bot, message):
+    text = f"""
+FIRST NAME - {message.from_user.first_name}
+LAST NAME  - {message.from_user.last_name}
+USER NAME  - {message.from_user.username}
+id         - {message.from_user.id}"""
     
     
     
