@@ -20,7 +20,7 @@ ALL_PIC = [
 @farshad.on_message(filters.command("start"))
 async def start_message(bot, message):
     await message.reply_text(
-        text=f"""hi {message.from.user.mention}""")
+        text="""hi {message.from.user.mention}""")
     
     
     
