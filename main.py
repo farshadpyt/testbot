@@ -39,30 +39,6 @@ async def start_message(bot, message):
     
     
     
-    
-    
-    
-    
-    
-    
-    
   
-
-
-
-
-
-
-@farshad.on_message(filters.command("help"))
-async def help_message(bot: farshad, message: Message):
-    await message.reply_text("help message")
-
-@farshad.on_message(filters.command("about"))
-async def about_message(bot, message):
-    await message.reply_text("hi hello about")
-
-
-
-
 
 farshad.run()
