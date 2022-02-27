@@ -31,12 +31,13 @@ async def start_message(bot, message):
 
     
 @farshad.on_message(filters.command("info"))    
-async def info(bot, message):
+async def info(bot, msg):
     text = f"""
-FIRST NAME - {message.from_user.first_name}
-LAST NAME  - {message.from_user.last_name}
-USER NAME  - {message.from_user.username}
-id         - {message.from_user.id}"""
+FIRST NAME - {msg.from_user.first_name}
+LAST NAME  - {msg.from_user.last_name}
+USER NAME  - {msg.from_user.username}
+id         - {msg.from_user.id}"""
+    await msg.reply_text(text=text)
     
     
     
