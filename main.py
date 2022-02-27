@@ -19,17 +19,8 @@ ALL_PIC = [
 
 @farshad.on_message(filters.command("start"))
 async def start_message(bot, message):
-    await message.reply_photo(
-        photo=random.choice(ALL_PIC),
-        caption=f"""hi {message.from_user.mention}"""),
-        reply_markup=InlineKeyboardMarkup( [[
-            InlineKeyboardButton("OWNER", url="t.me/farshadck"),
-            InlineKeyboardButton("ABOUT", url="t.me/farshadck")
-            ],[
-            InlineKeyboardButton("OWNER", url="t.me/farshadck")          
-            ]]
-            )
-        )
+    await message.reply_text(
+        text=f"""hi {message.from.user.mention}""")
     
     
     
