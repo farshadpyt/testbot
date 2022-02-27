@@ -17,10 +17,15 @@ ALL_PIC = [
 ]
 
 
+START_MESSAGE = """
+hello {}
+"""
+
+
 @farshad.on_message(filters.command("start"))
 async def start_message(bot, message):
     await message.reply_text(
-        text="""hi {message.from.user.mention}""")
+        text=START_MESSAGE.format(message.from_user.mention)
     
     
     
