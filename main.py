@@ -28,7 +28,7 @@ async def start_message(bot, message):
         text=START_MESSAGE.format(message.from_user.mention)
     
     
-    
+farshad.run()    
     
     
     
@@ -41,4 +41,4 @@ async def start_message(bot, message):
     
   
 
-farshad.run()
+
