@@ -29,8 +29,8 @@ hello {}
 async def start(bot, message):
     buttons = [[
         InlineKeyboardButton('🗣️OWNER', url='t.me/farshadck'),
-        InlineKeyboardButton('📢Updates', callback_data="help"),
-        InlineKeyboardButton('📃Bot List', url='https://t.me/Mo_Tech_YT/176'),
+        InlineKeyboardButton('📢HELP', callback_data="help"),
+        InlineKeyboardButton('📃ABOUT', callback_data="about"),
     ],[
         InlineKeyboardButton('🖥️ How To Own 🖥️', url='https://youtu.be/8kS8C9Tyvnc')
     ]]
@@ -79,7 +79,14 @@ async def callback(bot, msg: CallbackQuery):
         await msg.message.edit(
             text="text"
         )
-    
+
+        
+@farshad.on_callback_query()
+async def callback(bot, msg: CallbackQuery):
+    if msg.data == "about":
+        await msg.message.edit(
+            text="text"
+        )
     
     
     
