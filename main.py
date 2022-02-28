@@ -35,7 +35,7 @@ async def info(bot, msg):
     text = f"""
 FIRST NAME - {msg.from_user.first_name}
 LAST NAME  - {msg.from_user.last_name}
-USER NAME  - {msg.from_user.username}
+USER NAME  -  @{msg.from_user.username}
 id         - {msg.from_user.id}"""
     await msg.reply_text(text=text)
     
@@ -47,7 +47,17 @@ TITLE : {message.chat.title}
 USER NAME : @{message.chat.username}
 ID : {message.chat.id}"""
     await message.reply_text(text=text)
+
     
+    
+@farshad.on_message(filters.command("id"))    
+async def id(bot, msg):
+    text = f"""
+FIRST NAME - {msg.from_user.first_name}
+LAST NAME  - {msg.from_user.last_name}
+USER NAME  -  @{msg.from_user.username}
+id         - {msg.from_user.id}"""
+    await msg.reply_text(text=text)
     
 farshad.run()    
     
