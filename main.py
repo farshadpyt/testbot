@@ -83,7 +83,7 @@ async def start(bot, message):
     await farshad.send_message(
         chat_id=message.chat.id,
         reply_markup=reply_markup,
-        text=START_MESSAGE.format(
+        text=HELP_MESSAGE.format(
                 message.from_user.first_name),
         parse_mode="html")
     
