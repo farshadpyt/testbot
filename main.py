@@ -36,6 +36,13 @@ HELP_MESSAGE = """
   
   ✮ 𝐈𝐟 𝐲𝐨𝐮 𝐧𝐞𝐞𝐝 𝐭𝐨 𝐠𝐞𝐭 𝐚𝐧 𝐈'𝐝 𝐨𝐟 𝐚 𝐬𝐭𝐢𝐜𝐤𝐞𝐫 𝐩𝐚𝐜𝐤 𝐣𝐮𝐬𝐭 𝐬𝐞𝐧𝐝 𝐭𝐡𝐞 𝐬𝐭𝐢𝐜𝐤𝐞𝐫 𝐚𝐧𝐝 𝐫𝐞𝐩𝐥𝐲 𝐢𝐭 𝐰𝐢𝐭𝐡 /stickerid 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 𝐲𝐨𝐮 𝐰𝐨𝐮𝐥𝐝 𝐠𝐞𝐭 𝐢𝐭𝐬 𝐈𝐝.
 """
+ABOUT_MSG = """
+<u>🤖 𝐌𝐲 𝐍𝐚𝐦𝐞</u> : <a href='https://t.me/{}'>𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 𝐁𝐨𝐭</a> 
+  
+<u>📝 𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞</u> : <a href='https://www.python.org/'>𝐏𝐲𝐭𝐡𝐨𝐧3</a>
+<u>🧰 𝐅𝐫𝐚𝐦𝐞𝐖𝐨𝐫𝐤</u> : <a href='https://github.com/pyrogram/pyrogram'>𝐏𝐲𝐫𝐨𝐠𝐫𝐚𝐦</a>
+<u>👨‍💻 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫</u> : <a 🆉🅰🅰🅻 🆂🅸🆁</a>
+"""
 
 
 START_BUTTON = InlineKeyboardMarkup( [[
@@ -55,12 +62,29 @@ HELP_BUTTON = InlineKeyboardMarkup( [[
        InlineKeyboardButton("🤠 𝐀𝐛𝐨𝐮𝐭", callback_data="about")
        ]]
        )
+ABOUT_BUTTON = InlineKeyboardMarkup( [[
+       InlineKeyboardButton("🔙 𝐁𝐚𝐜𝐤", callback_data="help"),
+       InlineKeyboardButton("🏠 𝐇𝐨𝐦𝐞", callback_data="start"),
+       InlineKeyboardButton("⬇️ 𝐂𝐥𝐨𝐬𝐞", callback_data="close")
+       ]]
+       )
 
 JSON_BUTTON = InlineKeyboardMarkup( [[
        InlineKeyboardButton("📢 𝐉𝐎𝐈𝐍 𝐌𝐘 𝐔𝐏𝐃𝐀𝐓𝐄 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 📢", url="t.me/Mo_Tech_YT")
        ]]
        )
-
+ID_BUTTONS = InlineKeyboardMarkup( [[
+       InlineKeyboardButton("↗️ 𝐆𝐞𝐭 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 ↗️", callback_data="info")
+       ],[
+       InlineKeyboardButton("🔙 𝐁𝐚𝐜𝐤 𝐓𝐨 𝐇𝐞𝐥𝐩 🔙", callback_data="help")
+       ]]
+       )
+INFO_BUTTONS = InlineKeyboardMarkup( [[
+       InlineKeyboardButton("↗️ 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦 𝐈𝐃 ↗️", callback_data="id")
+       ],[
+       InlineKeyboardButton("🔙 𝐁𝐚𝐜𝐤 𝐓𝐨 𝐇𝐞𝐥𝐩 🔙", callback_data="help")
+       ]]
+       )
 @farshad.on_message(filters.private & filters.command(['start']))
 async def start(bot, message):
     buttons = [[
@@ -92,6 +116,20 @@ async def start(bot, message):
                 message.from_user.first_name),
         parse_mode="html")
     
+    
+@farshad.on_message(filters.private & filters.command(['about']))
+async def start(bot, message):
+    buttons = [[
+        InlineKeyboardButton("🏠 𝐇𝐨𝐦𝐞", callback_data="start"),
+        InlineKeyboardButton("⬇️ 𝐂𝐥𝐨𝐬𝐞", callback_data="close"),
+    ]]
+    reply_markup = InlineKeyboardMarkup(buttons)
+    await farshad.send_message(
+        chat_id=message.chat.id,
+        reply_markup=reply_markup,
+        text=ABOUT_MSG.format(
+                message.from_user.first_name),
+        parse_mode="html")
 @farshad.on_message(filters.private & filters.forwarded)
 async def info(bot, msg):
     if msg.forward_from:
@@ -189,7 +227,9 @@ async def callback(bot, msg: CallbackQuery):
         )
     elif msg.data == "about":
          await msg.message.edit(
-             text="about text"
+             text=ABOUT_MSG,
+             reply_markup=ABOUT_BUTTON,
+             disable_web_page_preview=True
          )
     elif msg.data == "info":
          await msg.message.edit(
