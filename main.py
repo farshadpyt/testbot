@@ -56,7 +56,11 @@ HELP_BUTTON = InlineKeyboardMarkup( [[
        ]]
        )
 
-    
+JSON_BUTTON = InlineKeyboardMarkup( [[
+       InlineKeyboardButton("📢 𝐉𝐎𝐈𝐍 𝐌𝐘 𝐔𝐏𝐃𝐀𝐓𝐄 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 📢", url="t.me/Mo_Tech_YT")
+       ]]
+       )
+
 @farshad.on_message(filters.private & filters.command(['start']))
 async def start(bot, message):
     buttons = [[
