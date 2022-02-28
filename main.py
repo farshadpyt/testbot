@@ -27,8 +27,8 @@ async def start_message(bot, message):
     await message.reply_text(
         text=START_MESSAGE.format(message.from_user.mention)
         reply_markup=InlineKeyboardMarkup([[
-          InlineKeyboardButton("OWNER", url=t.me/farshadck)
-          ]]
+            InlineKeyboardButton("OWNER", url=t.me/farshadck)
+            ]]
         )
     )
     
