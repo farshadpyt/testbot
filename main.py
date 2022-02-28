@@ -112,7 +112,7 @@ id         - {msg.from_user.id}"""
          )
     elif msg.data == "start":
          await msg.message.edit(
-             text=START_MESSAGE
+             text=START_MESSAGE,
              reply_markup=START_BUTTON,
              disable_web_page_preview=True
          )
