@@ -3,7 +3,6 @@ from random import random
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.types import CallbackQuery
-from testbot.Buttons import HELP_BUTTON
 import random
 farshad=Client(
     "pyrogram bot",
@@ -23,7 +22,15 @@ START_MESSAGE = """
 hello {}
 """
 
-
+HELP_BUTTON = InlineKeyboardMarkup( [[
+       InlineKeyboardButton("𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦 𝐈𝐝", callback_data="id"),
+       InlineKeyboardButton("𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦 𝐈𝐧𝐟𝐨", callback_data="info")
+       ],[
+       InlineKeyboardButton("🏠 𝐇𝐨𝐦𝐞", callback_data="start"),
+       InlineKeyboardButton("⬇️ 𝐂𝐥𝐨𝐬𝐞", callback_data="close"),
+       InlineKeyboardButton("🤠 𝐀𝐛𝐨𝐮𝐭", callback_data="about")
+       ]]
+       )
 
     
 @farshad.on_message(filters.private & filters.command(['start']))
