@@ -22,16 +22,24 @@ hello {}
 """
 
 
-@farshad.on_message(filters.command("start"))
-async def start_message(bot, message):
-    await message.reply_text(
-        text=START_MESSAGE.format(message.from_user.mention)
-        reply_markup=InlineKeyboardMarkup([[
-            InlineKeyboardButton("OWNER", url=t.me/farshadck)
-            ]]
-        )
-    )
+
     
+@farshad.on_message(filters.private & filters.command(['start']))
+async def start(bot, message):
+    buttons = [[
+        InlineKeyboardButton('🗣️Group', url='t.me/mo_tech_Group'),
+        InlineKeyboardButton('📢Updates', url='t.me/mo_tech_yt'),
+        InlineKeyboardButton('📃Bot List', url='https://t.me/Mo_Tech_YT/176'),
+    ],[
+        InlineKeyboardButton('🖥️ How To Own 🖥️', url='https://youtu.be/8kS8C9Tyvnc')
+    ]]
+    reply_markup = InlineKeyboardMarkup(buttons)
+    await farshad.send_message(
+        chat_id=message.chat.id,
+        reply_markup=reply_markup,
+        text=Translation.START_MESSAGE.format(
+                message.from_user.first_name),
+        parse_mode="html")
 
     
 @farshad.on_message(filters.command("info"))    
