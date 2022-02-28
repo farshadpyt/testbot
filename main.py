@@ -78,6 +78,10 @@ async def callback(bot, msg: CallbackQuery):
     if msg.data == "help":
         await msg.message.edit(
             text="text"
+            reply_markup=InlineKeyboardMarkup([[
+               InlineKeyboardButton("BACK", callback_data="about"
+               ]]
+            )
         )
     elif msg.data == "about":
          await msg.message.edit(
