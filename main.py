@@ -32,7 +32,7 @@ async def start(bot, message):
         InlineKeyboardButton('📢HELP', callback_data="help"),
         InlineKeyboardButton('📃ABOUT', callback_data="about"),
     ],[
-        InlineKeyboardButton('🖥️ How To Own 🖥️', url='https://youtu.be/8kS8C9Tyvnc')
+        InlineKeyboardButton('🖥️ INFO 🖥️', callback_data="info")
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
     await farshad.send_message(
@@ -85,9 +85,16 @@ async def callback(bot, msg: CallbackQuery):
 async def callback(bot, msg: CallbackQuery):
     if msg.data == "about":
         await msg.message.edit(
-            text="text"
+            text="about text"
         )
     
+    
+ @farshad.on_callback_query()
+async def callback(bot, msg: CallbackQuery):
+    if msg.data == "info":
+        await msg.message.edit(
+            text="info text"
+        )
     
     
     
