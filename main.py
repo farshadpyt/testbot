@@ -2,6 +2,7 @@ from cgitb import text
 from random import random
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import CallbackQuery
 import random
 farshad=Client(
     "pyrogram bot",
@@ -27,8 +28,8 @@ hello {}
 @farshad.on_message(filters.private & filters.command(['start']))
 async def start(bot, message):
     buttons = [[
-        InlineKeyboardButton('🗣️Group', url='t.me/mo_tech_Group'),
-        InlineKeyboardButton('📢Updates', url='t.me/mo_tech_yt'),
+        InlineKeyboardButton('🗣️OWNER', url='t.me/farshadck'),
+        InlineKeyboardButton('📢Updates', callback_data="help"),
         InlineKeyboardButton('📃Bot List', url='https://t.me/Mo_Tech_YT/176'),
     ],[
         InlineKeyboardButton('🖥️ How To Own 🖥️', url='https://youtu.be/8kS8C9Tyvnc')
@@ -70,6 +71,19 @@ LAST NAME  - {msg.from_user.last_name}
 USER NAME  -  @{msg.from_user.username}
 id         - {msg.from_user.id}"""
     await msg.reply_text(text=text)
+    
+
+@farshad.on_callback_query()
+async def callback(bot, msg: CallbackQuery):
+    if msg.data == "help":
+        await msg.message.edit(
+            text="text"
+        )
+    
+    
+    
+    
+    
     
 farshad.run()    
     
