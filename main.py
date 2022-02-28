@@ -79,7 +79,8 @@ async def callback(bot, msg: CallbackQuery):
         await msg.message.edit(
             text="text"
             reply_markup=InlineKeyboardMarkup([[
-               InlineKeyboardButton("BACK", callback_data="about"
+               InlineKeyboardButton("BACK", callback_data="about"),
+               InlineKeyboardButton("CLOSE", callback_data="close")
                ]]
             )
         )
@@ -95,6 +96,8 @@ LAST NAME  - {msg.from_user.last_name}
 USER NAME  -  @{msg.from_user.username}
 id         - {msg.from_user.id}"""
          )
+     elif msg.data == "close":
+        await msg.message.delete()
 
         
 
