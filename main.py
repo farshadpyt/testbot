@@ -40,6 +40,14 @@ id         - {msg.from_user.id}"""
     await msg.reply_text(text=text)
     
     
+@farshad.on_message(filters.group & filters.command("id"))    
+async def id(bot, message):
+    text = f""" 
+TITLE : {message.chat.title}
+USER NAME : @{message.chat.username}
+ID : {message.chat.id}"""
+    await message.reply_text(text=text)
+    
     
 farshad.run()    
     
