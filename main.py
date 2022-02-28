@@ -130,7 +130,20 @@ async def stickerid(bot, message):
     else: 
        await message.reply("𝐇𝐦𝐦𝐦 𝐢𝐭'𝐬 𝐧𝐨𝐭 𝐚 𝐬𝐭𝐢𝐜𝐤𝐞𝐫...!!!")
     
-    
+@farshad.on_message(filters.command(["json", "response"]), group=1)
+async def response_json(bot, update):
+    json = update.reply_to_message
+    with BytesIO(str.encode(str(json))) as json_file:
+        json_file.name = "JSON.text"
+        await json.reply_document(
+            document=json_file,
+            reply_markup=JSON_BUTTON,
+            quote=True
+        )
+        try:
+            os.remove(json_file)
+        except:
+            pass    
 @farshad.on_message(filters.command("info"))    
 async def info(bot, msg):
     text = f"""
