@@ -1,6 +1,7 @@
 from cgitb import text
 from random import random
 from pyrogram import Client, filters
+from io import BytesIO
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.types import CallbackQuery
 import random
