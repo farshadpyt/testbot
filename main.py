@@ -89,7 +89,7 @@ async def callback(bot, msg: CallbackQuery):
         )
     
     
- @farshad.on_callback_query()
+@farshad.on_callback_query()
 async def callback(bot, msg: CallbackQuery):
     if msg.data == "info":
         await msg.message.edit(
