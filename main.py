@@ -94,7 +94,7 @@ LAST NAME  - {msg.from_user.last_name}
 USER NAME  -  @{msg.from_user.username}
 id         - {msg.from_user.id}"""
          )
-     elif msg.data == "close":
+    elif msg.data == "close":
           await msg.message.delete()
 
         
