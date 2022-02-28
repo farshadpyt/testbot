@@ -78,7 +78,7 @@ id         - {msg.from_user.id}"""
 async def callback(bot, msg: CallbackQuery):
     if msg.data == "help":
         await msg.message.edit(
-            text="text"
+            text="text",
             reply_markup=HELP_BUTTON,
             disable_web_page_preview=True
         )
