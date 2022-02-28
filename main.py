@@ -23,7 +23,14 @@ START_MESSAGE = """
 𝐈𝐚𝐦 𝐚 𝐒𝐢𝐦𝐩𝐥𝐞 𝐁𝐨𝐭 𝐅𝐨𝐫 𝐅𝐢𝐧𝐝𝐢𝐧𝐠 𝐈𝐃𝐬 𝐢𝐧 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦.. 🔍 🆔
 𝐂𝐥𝐢𝐜𝐤 𝐭𝐡𝐞 𝐇𝐞𝐥𝐩 𝐁𝐮𝐭𝐭𝐨𝐧 𝐨𝐫 /help 𝐅𝐨𝐫 𝐌𝐨𝐫𝐞 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧
 """
-
+START_BUTTON = InlineKeyboardMarkup( [[
+        InlineKeyboardButton('🗣️OWNER', url='t.me/farshadck'),
+        InlineKeyboardButton('📢HELP', callback_data="help"),
+        InlineKeyboardButton('📃ABOUT', callback_data="about"),
+        ],[
+        InlineKeyboardButton('🖥️ INFO 🖥️', callback_data="info")
+        ]]
+        )
 HELP_BUTTON = InlineKeyboardMarkup( [[
        InlineKeyboardButton("𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦 𝐈𝐝", callback_data="id"),
        InlineKeyboardButton("𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦 𝐈𝐧𝐟𝐨", callback_data="info")
@@ -102,6 +109,12 @@ FIRST NAME - {msg.from_user.first_name}
 LAST NAME  - {msg.from_user.last_name}
 USER NAME  -  @{msg.from_user.username}
 id         - {msg.from_user.id}"""
+         )
+    elif msg.data == "start"
+         await msg.message.edit(
+             text=START_MESSAGE
+             reply_markup=START_BUTTON,
+             disable_web_page_preview=True
          )
     elif msg.data == "close":
           await msg.message.delete()
