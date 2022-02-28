@@ -110,7 +110,7 @@ LAST NAME  - {msg.from_user.last_name}
 USER NAME  -  @{msg.from_user.username}
 id         - {msg.from_user.id}"""
          )
-    elif msg.data == "start"
+    elif msg.data == "start":
          await msg.message.edit(
              text=START_MESSAGE
              reply_markup=START_BUTTON,
