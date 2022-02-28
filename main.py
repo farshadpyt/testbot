@@ -1,6 +1,5 @@
 from cgitb import text
 from random import random
-from translation import Translation
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 import random
@@ -38,7 +37,7 @@ async def start(bot, message):
     await farshad.send_message(
         chat_id=message.chat.id,
         reply_markup=reply_markup,
-        text=Translation.START_MESSAGE.format(
+        text=START_MESSAGE.format(
                 message.from_user.first_name),
         parse_mode="html")
 
