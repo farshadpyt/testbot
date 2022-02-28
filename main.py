@@ -79,11 +79,11 @@ async def callback(bot, msg: CallbackQuery):
         await msg.message.edit(
             text="text"
         )
-     elif msg.data == "about":
+    elif msg.data == "about":
          await msg.message.edit(
              text="about text"
          )
-     elif msg.data == "info":
+    elif msg.data == "info":
          await msg.message.edit(
              text= f"""
 FIRST NAME - {msg.from_user.first_name}
@@ -96,13 +96,7 @@ id         - {msg.from_user.id}"""
 
     
     
-@farshad.on_callback_query()
-async def callback(bot, msg: CallbackQuery):
-    if msg.data == "info":
-        await msg.message.edit(
-            text="info text"
-        )
-    
+
     
     
     
